@@ -15,7 +15,7 @@ export const ShopItem = memo(({ shop }: ShopItemProps) => {
       className={`relative flex flex-col md:flex-row gap-8 items-center p-8 border rounded-xl bg-white`}
     >
       <img
-        src={shop.imageUrl}
+        src={shop.imageUrl || undefined}
         alt={shop.id}
         loading="lazy"
         className="w-32 h-32 object-cover rounded-xl"
