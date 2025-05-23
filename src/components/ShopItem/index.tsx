@@ -1,13 +1,17 @@
 import { memo } from "react";
 import { Shop } from "../../types/Shop";
 
-export const ShopItem = memo(({ shop }: { shop: Shop }) => {
+type ShopItemProps = {
+  shop: Shop;
+};
+
+export const ShopItem = memo(({ shop }: ShopItemProps) => {
   const [street, city] = shop.address
     .split(", ")
     .map((part: string) => part.replace(/\d{2}-\d{3}/, "").trim());
 
   return (
-    <div
+    <li
       className={`relative flex flex-col md:flex-row gap-8 items-center p-8 border rounded-xl bg-white`}
     >
       <img
@@ -30,6 +34,6 @@ export const ShopItem = memo(({ shop }: { shop: Shop }) => {
           {shop.type}
         </span>
       </div>
-    </div>
+    </li>
   );
 });

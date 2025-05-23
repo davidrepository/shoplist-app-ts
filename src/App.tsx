@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [layout, setLayout] = useState<"grid" | "list">("grid");
 
   const filteredShops = useMemo(() => {
     const query = search.toLowerCase();
@@ -16,9 +17,14 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header search={search} onSearchChange={setSearch} />
+      <Header
+        search={search}
+        onSearchChange={setSearch}
+        layout={layout}
+        setLayout={setLayout}
+      />
       <main className="p-4 bg-gray-100 flex-grow overflow-auto">
-        <ShopList shops={filteredShops} />
+        <ShopList shops={filteredShops} layout={layout} />
       </main>
       <Footer />
     </div>
