@@ -1,2 +1,7 @@
-# shoplist-app-ts
- 
+# ShopList App
+
+## Stack
+
+React
+TypeScript
+Tailwind CSS
