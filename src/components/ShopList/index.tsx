@@ -1,12 +1,7 @@
-import { FC } from "react";
 import { Shop } from "../../types/Shop";
 import { ShopItem } from "../ShopItem";
 
-type Props = {
-  shops: Shop[];
-};
-
-export const ShopList: FC<Props> = ({ shops }) => {
+export const ShopList = ({ shops }: { shops: Shop[] }) => {
   return (
     <div className="space-y-6">
       <div className="grid gap-4">

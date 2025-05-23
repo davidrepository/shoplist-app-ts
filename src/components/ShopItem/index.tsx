@@ -1,11 +1,7 @@
-import { FC, memo } from "react";
+import { memo } from "react";
 import { Shop } from "../../types/Shop";
 
-type Props = {
-  shop: Shop;
-};
-
-export const ShopItem: FC<Props> = memo(({ shop }) => {
+export const ShopItem = memo(({ shop }: { shop: Shop }) => {
   const [street, city] = shop.address
     .split(", ")
     .map((part: string) => part.replace(/\d{2}-\d{3}/, "").trim());
